@@ -1,11 +1,11 @@
 import React from 'react';
-import './VrArchiving.css';
+import './VideoBoard.css';
 import gwanghwamun from './images/gwanghwamun.jpg'; 
 
 
 function VideoBoard() {
     return (
-    <div className="VrArchiving">
+    <div className="VideoBoard">
         <div className="area-warp">
             <div className="left-area">
             <div className="title">영상게시판</div>

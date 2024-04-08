@@ -1,9 +1,15 @@
 import React, { useRef } from 'react'; // useRef 추가
+import { useNavigate } from 'react-router-dom';
+
 
 import './landing_page_banner.css';
 import logo from './images/logo.png'; 
 
 function Header({ vrArchivingRef, videoBoardRef }) {
+	
+	   const navigate = useNavigate();
+
+	
 	 console.log(vrArchivingRef, videoBoardRef); // 이 줄을 추가하여 확인
 
 	
@@ -18,6 +24,8 @@ function Header({ vrArchivingRef, videoBoardRef }) {
 	        vrArchivingRef.current.scrollIntoView({ behavior: 'smooth' });            
 	    } else if  (id === '영상게시판' && videoBoardRef.current){
 	        videoBoardRef.current.scrollIntoView({ behavior: 'smooth' });         
+	    } else if  (id === 'HOME'){
+	    	navigate('/'); 
 	    } else {
 	        alert(`${id} 메뉴가 클릭되었습니다.`);
 	        // 다른 id에 대한 처리...
@@ -30,13 +38,13 @@ function Header({ vrArchivingRef, videoBoardRef }) {
     };
     
     const handleLogoClick = () => {
-        alert('로고 이미지가 클릭되었습니다.');
+	    navigate('/'); 
     };
     		
     return (
         <header id="header">
             <div className="logo">
-				<a href="#" onClick={handleLogoClick}>
+				<a onClick={handleLogoClick}>
             		<img src={logo} alt="로고 이미지" />
 	            </a>            
             </div>

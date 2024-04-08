@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './VrArchiving.css';
 import gwanghwamun from './images/gwanghwamun.jpg'; 
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 function VrArchiving() {
+	
+   const navigate = useNavigate();
+
+   
+   const handleSeeMoreClick = () => {
+	    navigate('/vr-archiving-board'); 
+    };
+   
+   
     return (
     <div className="VrArchiving">
         <div className="area-warp">
@@ -15,7 +25,7 @@ function VrArchiving() {
             </div>
             <div className="right-area">
                 <div className="see-more-button-wrapper">
-                    <button className="see-more">See More<i className="bi bi-arrow-right-short"></i></button>
+                    <button className="see-more"onClick={handleSeeMoreClick}>See More<i className="bi bi-arrow-right-short"></i></button>
                 </div>
             </div>
         </div>
@@ -53,7 +63,8 @@ function VrArchiving() {
                    <a href="#" className="btn">Read More<i className="bi bi-chevron-compact-right"></i></a> 
                </div>
            </div>
-       </div>        
+       </div>   
+
     </div>
     );
 }
